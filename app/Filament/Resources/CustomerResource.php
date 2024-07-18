@@ -53,7 +53,15 @@ class CustomerResource extends Resource
                     ->label('No Handphone'),
                 Tables\Columns\TextColumn::make('address'),
                 Tables\Columns\TextColumn::make('company'),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\IconColumn::make('status')
+                    ->icon(fn (string $state): string => match ($state) {
+                        'enable' => 'heroicon-o-check-badge',
+                        'disable' => 'heroicon-o-x-mark',
+                    })
+                    ->colors([
+                        'success' => 'enable',
+                        'warning' => 'disable',
+                    ]),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
