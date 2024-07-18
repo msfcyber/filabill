@@ -25,7 +25,7 @@ class AssetResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama_barang'),
                 Forms\Components\TextInput::make('harga'),
-                Forms\Components\TextInput::make('tanggal_pembelian'),
+                Forms\Components\DatePicker::make('tanggal_pembelian'),
                 Forms\Components\TextInput::make('garansi'),
                 Forms\Components\Textarea::make('deskripsi')
                     ->columnSpanFull(),
